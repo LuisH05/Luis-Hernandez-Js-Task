@@ -4,8 +4,20 @@
     box-sizing: border-box;
 }
 body {
-    width: 100%;
+    min-width: 100%;
     background-color: #E4D0D0;
+}
+
+main{
+    min-height: 65vh;
+}
+
+
+.body-container {
+    padding: 0!important;
+}
+header{
+    background-color: black
 }
 
 .navbar-expand-lg .navbar-collapse {
@@ -23,7 +35,8 @@ body {
     border-radius: 4px;
     text-align: center;
     margin: 0.5rem;
-    color: #000000;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 .nav-link:hover {
@@ -52,9 +65,25 @@ body {
     margin: 1rem;
 }
 
+.div-price{
+    width: 100% !important;
+}
+
 .img-carta {
-    width: 30vh;
-    margin-top: 2rem;
+    margin: 1rem;
+}
+
+.template-img{
+    object-fit: cover;
+    width: auto !important;
+}
+.card-text{
+    margin-bottom: 0;
+}
+
+.card-img-top{
+    height: 40%;
+    object-fit: cover;
 }
 
 .bi-search{
@@ -83,11 +112,8 @@ footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 4rem;
-    height: 55vh;
-    background-color: #00000048;
-    border-radius: 1rem;
-    border: 2px solid black;
+    margin-bottom: 2rem;
+    height: 60vh;
 }
 .div-form {
     width: 10rem;
@@ -102,7 +128,7 @@ footer{
 }
 
 form {
-    width: 40%;
+    width: 30%;
     align-items: center;
     font-weight: bold;
 }
@@ -164,36 +190,60 @@ th {
 }
 .main-details {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 70vh;
-    margin: 2rem;
 }
 .img-form2 {
     border-radius: 2rem;
     border: 2px solid rgb(245, 222, 179);
-    margin: 1rem;
 }
 
 .card-details {
-    width: 20rem;
+    width: 50vh;
     padding: 1rem;
     border: 1px solid #000000;
     border-radius: 1rem;
     background-color: rgb(255, 228, 196);
 }
 
-@media (min-width: 319px) and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1023px){
 
     .main-div {
         flex-direction: column;
     }
-    form {
-        width: auto;
+    .container1 {
+        width: 100;
     }
 
-    .container1{
+    .card {
+        width: 65%;
+        height: auto;
+    }
+
+    footer{
+        flex-direction: column;
         width: auto;
+        height: auto;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+    .main-div {
+        flex-direction: column;
+    }
+
+    .container1 {
+        width: 100%;
+    }
+    .card {
+        flex-direction: column;
+        width: 60% !important;
+        height: auto;
+    }
+
+    #details-card{
+        flex-wrap: wrap;
     }
 
     footer{
