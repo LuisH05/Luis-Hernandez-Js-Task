@@ -8,6 +8,11 @@ body {
     background-color: #E4D0D0;
 }
 
+main{
+    min-height: 65vh;
+}
+
+
 .body-container {
     padding: 0!important;
 }
@@ -67,6 +72,11 @@ header{
 .img-carta {
     margin: 1rem;
 }
+
+.template-img{
+    object-fit: cover;
+    width: auto !important;
+}
 .card-text{
     margin-bottom: 0;
 }
@@ -79,7 +89,6 @@ header{
 .bi-search{
     margin: 0.2rem;
 }
-
 
 footer{
     display: flex;
@@ -181,26 +190,24 @@ th {
 }
 .main-details {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 70vh;
-    margin: 1rem;
 }
 .img-form2 {
     border-radius: 2rem;
     border: 2px solid rgb(245, 222, 179);
-    margin: 1rem;
 }
 
 .card-details {
-    width: 20rem;
+    width: 50vh;
     padding: 1rem;
     border: 1px solid #000000;
     border-radius: 1rem;
     background-color: rgb(255, 228, 196);
 }
 
-@media (min-width: 551px) and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1023px){
 
     .main-div {
         flex-direction: column;
@@ -210,7 +217,8 @@ th {
     }
 
     .card {
-        width: 70%;
+        width: 65%;
+        height: auto;
     }
 
     footer{
@@ -220,7 +228,7 @@ th {
     }
 }
 
-@media (min-width: 320px) and (max-width: 550px){
+@media (min-width: 320px) and (max-width: 767px){
     .main-div {
         flex-direction: column;
     }
@@ -228,9 +236,14 @@ th {
     .container1 {
         width: 100%;
     }
-
     .card {
-        width: 100%;
+        flex-direction: column;
+        width: 60% !important;
+        height: auto;
+    }
+
+    #details-card{
+        flex-wrap: wrap;
     }
 
     footer{

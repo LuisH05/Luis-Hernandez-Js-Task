@@ -95,7 +95,7 @@
           "date":"2021-03-01",
           "description":"Come and exercise, improve your health and lifestyle.",
           "category":"Race",
-          "place":"Campo de FutbÃ³l",
+          "place":"Campo de Futbol",
           "capacity":30000,
           "assistance":25698,
           "price":3
