@@ -8,7 +8,7 @@ export function crearTemplate(evento){
             <p class="card-text m">${evento.description}<br></p>
             <div class="d-flex align-items-center justify-content-between div-price">
             <b>Price: $${evento.price}</b> 
-            <a href="/assets/pages/details.html?id=${evento.name}" class="btn btn-secondary">Details</a>
+            <a href="/assets/pages/details.html?id=${evento._id}" class="btn btn-secondary">Details</a>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@ export function crearTemplate(evento){
 
 export function creandoEvento (listaEventos, contenido){
 if(listaEventos.length === 0){
-    contenido.innerHTML= ('<h3>Sorry there are no events to display</h3>')
+    contenido.innerHTML= ('<div class="h3-template"><h3>Sorry there are no events to display :(</h3></div>')
 }else{
     let template = ''
     for( let evento of listaEventos ){
@@ -37,14 +37,13 @@ export function createCheckbox(listCategory, container){
     })
 }
 
-
 export function filterForCategory(listCarts, arrayCategories){
     if (arrayCategories.length == 0 ){
         return listCarts
     }
+    console.log(arrayCategories);
     return listCarts.filter(cart =>  arrayCategories.includes(cart.category))
 } 
-
 
 export function filterForText(listCarts, text){
     return listCarts.filter(cart => cart.name.toLowerCase().includes( text.toLowerCase() ) || cart.description.toLowerCase().includes( text.toLowerCase() ) )
@@ -66,7 +65,7 @@ export function createCardDetails(evento, container){
     <div class="card-body">
         <h3 class="card-title">${evento.name}</h3>
         <p class="card-text"><b>Description:</b> ${evento.description}</p>
-        <p class="card-text"><b>Date:</b> ${evento.data}</p>
+        <p class="card-text"><b>Date:</b> ${evento.date}</p>
         <p class="card-text"><b>Category:</b> ${evento.category}</p>
         <p class="card-text"><b>Place:</b> ${evento.place}</p>
         <p class="card-text"><b>Capacity:</b> ${evento.capacity}</p>
@@ -75,4 +74,41 @@ export function createCardDetails(evento, container){
     </div>
 </div>`
     container.innerHTML= cards
+}
+
+
+// STATS
+
+export function table1 (highestAttendance, lowestAttendance, higherCapacity, container){
+    let paint  = `<tr>
+    <td>${highestAttendance.name} ${((highestAttendance.assistance / highestAttendance.capacity) * 100).toFixed(2)}%</td>
+    <td>${lowestAttendance.name} ${((lowestAttendance.assistance / lowestAttendance.capacity) * 100).toFixed(2)}%</td>
+    <td>${higherCapacity.name} ${higherCapacity.capacity}</td>
+</tr>`
+container.innerHTML = paint
+}
+
+
+export function table2 (categorys, container){
+    let paint  = ''
+    for ( let category of categorys){
+        paint +=  `<tr>
+        <td>${category.category}</td>
+        <td>$${category.revenues}</td>
+        <td>${(category.assistence / category.events).toFixed(1)}%</td>
+    </tr>`
+    }
+    container.innerHTML = paint
+}
+
+export function table3 (categorys, table3){
+    let paint  = ''
+    for ( let category of categorys){
+        paint +=  `<tr>
+        <td>${category.category}</td>
+        <td>$${category.revenues}</td>
+        <td>${(category.assistence / category.events).toFixed(1)}%</td>
+    </tr>`
+    }
+    table3.innerHTML = paint
 }
